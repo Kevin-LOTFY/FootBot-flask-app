@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FootBot ⚽ — Réservation de billets</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-container">
+
+  <header class="header">
+    <div class="header-logo">⚽</div>
+    <div class="header-title">
+      <h1>FootBot</h1>
+      <span class="subtitle">Réservation · Scores · Prédictions</span>
+    </div>
+    <div class="header-status">
+      <span class="status-dot"></span>
+      <span>En ligne</span>
+    </div>
+  </header>
+
+  <div class="main-content">
+
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <h3>📅 Prochains Matchs</h3>
+        <div id="upcoming-matches">
+          <div class="match-meta">Chargement…</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>⚽ Résultats Récents</h3>
+        <div id="recent-scores">
+          <div class="score-comp">Chargement…</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="chat-area">
+      <div id="chat-box"></div>
+
+      <div class="quick-actions">
+        <button class="quick-btn" onclick="quickAction('Derniers scores')">⚽ Scores</button>
+        <button class="quick-btn" onclick="quickAction('Programme des matchs')">📅 Matchs</button>
+        <button class="quick-btn" onclick="quickAction('Je veux réserver une place')">🎫 Réserver</button>
+        <button class="quick-btn" onclick="quickAction('Prédictions des matchs')">🔮 Prédictions</button>
+        <button class="quick-btn" onclick="quickAction('Aide')">❓ Aide</button>
+      </div>
+
+      <div class="input-area">
+        <input type="text" id="user-input"
+               placeholder="Écrivez votre message…"
+               autocomplete="off">
+        <button id="send-btn" onclick="sendMessage()">Envoyer</button>
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
